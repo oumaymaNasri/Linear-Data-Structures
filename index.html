@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>the sentences is:</h1>
+    <p>hi, My name is Oumayma and i'm a web developper and designer. </p>
+
+<script>
+
+    var OUT = 0;
+    var IN = 1;
+     
+    function lengthSentence(str){
+        var ls=0;
+        ls = str.length;
+        return ls;
+    }
+
+    function countWords( str)
+    {
+        var state = OUT;
+        var wc = 0; // word count
+        var i = 0;
+         
+
+        while (i < str.length-1)
+        {
+         
+
+            if (str[i] == ' ')
+                state = OUT;
+            else if (state == OUT)
+            {
+                state = IN;
+                ++wc;
+            }
+            ++i;
+        }
+         
+        return wc;
+    }
+  
+    function countVowel(str) { 
+
+        // find the count of vowels
+        const count = str.match(/[aeiou]/gi).length;
+
+        // return number of vowels
+        return count;
+    }
+
+        var str = "hi, My name is Oumayma and i'm a web developper and designer.";
+
+        document.write("Length of sentence : "+ lengthSentence(str));
+        document.write(" <br> <br> Number of words : "+ countWords(str));
+        document.write(" <br> <br> Number of vowels : "+ countVowel(str));
+        
+
+</script>
+</body>
+</html>
